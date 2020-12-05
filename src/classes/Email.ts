@@ -19,11 +19,27 @@ export class Email {
                           </span>`;
   }
 
-  getEmailHTML() {
+  private deleteTag(element: HTMLElement): void {
+    const parent = element.parentElement;
+    parent?.remove();
+  }
+
+  private stringToHTML(str: string): HTMLElement {
+    const context = this;
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str, 'text/html');
+    let element: HTMLElement = doc.getElementsByClassName('js-delete-tag')[0] as HTMLElement;
+    element.addEventListener('click', function (e) {
+      context.deleteTag(this);
+    });
+    return doc.body;
+  };
+
+  getEmailHTML(): HTMLElement {
     if (this.isValid) {
-      return this.validEmail;
+      return this.stringToHTML(this.validEmail);
     } else {
-      return this.invalidEmail;
+      return this.stringToHTML(this.invalidEmail);
     }
   }
 

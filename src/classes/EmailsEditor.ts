@@ -21,7 +21,7 @@ export class EmailsEditor {
   render(container: HTMLElement): void {
     const htmlTemplate = new Email(this.email, this.checkEmail())
 
-    const body = this.stringToHTML(htmlTemplate.getEmailHTML());
+    const body = htmlTemplate.getEmailHTML();
     container.append(body);
   }
 

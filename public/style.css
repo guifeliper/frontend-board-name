@@ -73,6 +73,8 @@ body{
   width: 100%;
   min-height: 96px;
   resize: none;
+  padding: 8px;
+  line-height: 24px;
 }
 
 .emailInput{
@@ -80,6 +82,16 @@ body{
 }
 input:focus{
   outline: none;
+}
+
+span.email {
+  background: rgba(102, 153, 255, 0.2);
+  border-radius: 100px;
+  padding: 0 8px;
+  margin-right: 8px;
+}
+span.email > .js-delete-tag{
+
 }
 /* do not group these rules */
 *::-webkit-input-placeholder {

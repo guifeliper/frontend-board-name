@@ -18,7 +18,7 @@ export class EmailsEditor {
     return regexp.test(this.email);
   }
 
-  render(container: HTMLElement, ): void {
+  render(container: HTMLElement): void {
     const htmlTemplate = new Email(this.email, this.checkEmail())
 
     const body = this.stringToHTML(htmlTemplate.getEmailHTML());

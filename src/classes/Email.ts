@@ -19,12 +19,6 @@ export class Email {
                           </span>`;
   }
 
-  private stringToHTML = function (str: string) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(str, 'text/html');
-    return doc.body;
-  };
-
   getEmailHTML() {
     if (this.isValid) {
       return this.validEmail;

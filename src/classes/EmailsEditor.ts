@@ -24,4 +24,6 @@ export class EmailsEditor {
     const body = this.stringToHTML(htmlTemplate.getEmailHTML());
     container.append(body);
   }
+
+ 
 }

@@ -5,12 +5,13 @@ const emailInput = document.getElementById("emailsInput") as HTMLInputElement;
 const emailsContainer = document.getElementById("emailsContainer") as HTMLElement;
 const addEmail = document.getElementById("addEmail") as HTMLButtonElement;
 const getEmailsCount = document.getElementById("getEmails") as HTMLButtonElement;
-let validEmailsCount: number = 0;
+
 
 // Functions 
-function emailCounter(emailEditor: EmailsEditor): void {
-  const isValid = emailEditor.checkEmail();
-  if (isValid) validEmailsCount++;
+function getValidEmails(): number {
+  const validEmails = document.getElementsByClassName('email');
+
+  return validEmails.length;
 }
 
 function generateEmail(emailEditor: EmailsEditor): void {
@@ -22,7 +23,6 @@ function insertEmails(input: string): void {
   emailArr.forEach((email) => {
     const emailEditor = new EmailsEditor(email.trim());
     generateEmail(emailEditor);
-    emailCounter(emailEditor);
   });
 }
 
@@ -44,6 +44,7 @@ emailInput.addEventListener('focusout', function (e) {
 });
 
 getEmailsCount.addEventListener('click', function (e) {
+  let validEmailsCount: number = getValidEmails();
   if (validEmailsCount > 1) {
     alert(`You have ${validEmailsCount} valid emails`);
   } else {

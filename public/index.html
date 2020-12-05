@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Typescript and Webpack Template</title>
-  </head>
-  <body>
-    <main>
-      <h1>Typescript and Webpack Template</h1>
-      <div id="app"></div>
-    </main>
-    <script src="bundle.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Board name</title>
+</head>
+
+<body>
+  <main>
+    <div id="app">
+      <div class="container">
+        <div class="card">
+          <div class="card__body">
+            <div class="card__container">
+              <h1 class="card__title">Share <b class="card__title--bold">Board name</b> with others</h1>
+              <div class="emailsContainer" id="emailsContainer">
+                <span>Chip x</span>
+                <span>Chip x</span>
+                <span>Chip x</span>
+                <span>Chip x</span>
+                <input class="emailInput" type="text" id="emailsInput" autofocus>
+              </div>
+            </div>
+          </div>
+          <div class="card__action">
+            <button class="btn card__addEmail">Add email</button>
+            <button class="btn card__getEmail">Get emails count</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="bundle.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.clearfix::after { 
+  content: " ";
+  display: block; 
+  height: 0; 
+  clear: both;
+}
+
+body{
+  font-family: 'Open Sans',serif;
+}
+
+.container {
+  overflow:hidden;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+   min-height: 350px; 
+   height:100px;
+}
+
+.card{
+  background: #FFFFFF;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  height: 300px;
+  width: 540px;
+}
+
+.card__body{
+  background: #F8F8F7;
+  border-radius: 8px 8px 0px 0px;
+  height: calc(100% - 96px);
+  width: 100%;
+}
+
+.card__action{
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin: 24px 50px 32px 50px;
+  border-radius: 8px;
+}
+
+.card__container{
+  padding: 32px 50px 24px 50px;
+}
+
+.card__title{
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.card__title--bold{
+  font-weight: 700;
+}
+
+.emailsContainer{
+  background: #FFFFFF;
+  border: 1px solid #C3C2CF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 96px;
+  resize: none;
+}
+
+.emailInput{
+  border: unset;
+}
+input:focus{
+  outline: none;
+}
+/* do not group these rules */
+*::-webkit-input-placeholder {
+  color: #C3C2CF;
+;
+}
+*:-moz-placeholder {
+  /* FF 4-18 */
+  color: #C3C2CF
+  opacity: 1;
+}
+*::-moz-placeholder {
+  /* FF 19+ */
+  color: #C3C2CF
+  opacity: 1;
+}
+*:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #C3C2CF
+}
+*::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #C3C2CF
+}
+*::placeholder {
+  /* modern browser */
+  color: #C3C2CF
+}
+
+button.btn{
+  background: #4262FF;
+  border-radius: 6px;
+  height: 40px;
+  min-width: 90px;
+  border-radius: 6px;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 16px;
+  margin-right: 16px;
+}

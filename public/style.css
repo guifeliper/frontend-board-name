@@ -96,7 +96,8 @@ span.email {
   padding: 0 8px;
   margin-right: 8px;
 }
-span.email > .js-delete-tag{
+span.email > .js-delete-tag,
+span.emailInvalid > .js-delete-tag{
   cursor: pointer;
 }
 /* do not group these rules */

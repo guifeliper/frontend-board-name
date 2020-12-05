@@ -1,3 +1,4 @@
+import { Email } from './Email';
 export class EmailsEditor {
   email: string;
 
@@ -6,11 +7,6 @@ export class EmailsEditor {
   }
 
 
-  private createElementFromHTML(htmlString: string) {
-    var div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-  }
   private stringToHTML = function (str: string) {
     var parser = new DOMParser();
     var doc = parser.parseFromString(str, 'text/html');
@@ -22,14 +18,10 @@ export class EmailsEditor {
     return regexp.test(this.email);
   }
 
-  render(container: HTMLElement): void {
-    const htmlTemplate = `<span class="email">${this.email}
-                            <a class="js-delete-tag" title="Remove tag">
-                              x
-                            </a>
-                          </span>`;
+  render(container: HTMLElement, ): void {
+    const htmlTemplate = new Email(this.email, this.checkEmail())
 
-    const body = this.stringToHTML(htmlTemplate);
+    const body = this.stringToHTML(htmlTemplate.getEmailHTML());
     container.append(body);
   }
 }

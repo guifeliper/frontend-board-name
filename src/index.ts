@@ -4,24 +4,29 @@ const emailInput = document.getElementById("emailsInput") as HTMLInputElement;
 const emailsContainer = document.getElementById("emailsContainer") as HTMLElement;
 
 
-emailInput.addEventListener('keypress', function (e) {
-  e.preventDefault();
+function generateEmail(email: string): void {
+  const emailEditor = new EmailsEditor(email.trim());
+  emailEditor.render(emailsContainer);
+}
 
+function someFunction(): void {
   var emailArr = emailInput.value.split(',');
-  console.log(emailArr);
-  if (e.key === 'Enter') {
-    var emailArr = emailInput.value.split(',');
-    emailArr.forEach((email)=> {
-      const emailEditor = new EmailsEditor(email.trim());
-      if(emailEditor.checkEmail()){
-        emailEditor.render(emailsContainer);
-      }
-      // console.log('Add email', emailEditor.checkEmail());
-    });
+  emailArr.forEach((email) => {
+    generateEmail(email);
+  });
+  emailInput.value = '';
+}
 
-  } else if(e.key === ','){
-    const emailEditor = new EmailsEditor(emailInput.value);
-    console.log('Add email', emailEditor.checkEmail());
+emailInput.addEventListener('keyup', function (e) {
+  console.log(emailInput.value.length);
+  if(emailInput.value.length < 3) return;
+  if (e.key === 'Enter' || e.key === ',') {
+    someFunction();
   }
+});
+
+emailInput.addEventListener('focusout', function (e) {
+  if(emailInput.value.length < 3) return;
+  someFunction();
 });
 // guilherme@gmail.com, mayara, karina@ghu.com, may@maracaja.com

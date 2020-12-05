@@ -80,6 +80,12 @@ body{
 .emailInput{
   border: unset;
 }
+
+.emailInvalid{
+  font-size: 14px;
+  border-bottom: 1px dashed #D92929;
+}
+
 input:focus{
   outline: none;
 }

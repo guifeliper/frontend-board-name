@@ -1,5 +1,5 @@
-import { Email } from './Email';
-export class EmailsEditor {
+import Email from './Email';
+export default class EmailsEditor {
   email: string;
 
   constructor(email: string) {
@@ -18,5 +18,5 @@ export class EmailsEditor {
     container.append(body);
   }
 
- 
+
 }

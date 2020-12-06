@@ -13,10 +13,9 @@ export default class EmailsEditor {
 
   render(container: HTMLElement): void {
     const htmlTemplate = new Email(this.email, this.checkEmail())
-
+    const inputItem = container.lastElementChild;
     const body = htmlTemplate.getEmailHTML();
-    container.append(body);
+    if(body.childNodes.length == 0) return;
+    container.insertBefore(body.childNodes[0], inputItem);
   }
-
-
 }

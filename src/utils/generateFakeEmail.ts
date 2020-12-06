@@ -4,7 +4,7 @@ export default function generateFakeEmail(): string {
   var strTmp;
 
   // Name
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 6; i++) {
     strTmp = strValues.charAt(Math.round(strValues.length * Math.random()));
     strEmail = strEmail + strTmp;
   }
@@ -12,7 +12,7 @@ export default function generateFakeEmail(): string {
   strEmail = strEmail + "@";
 
   //Provider
-  for (var j = 0; j < 8; j++) {
+  for (var j = 0; j < 4; j++) {
     strTmp = strValues.charAt(Math.round(strValues.length * Math.random()));
     strEmail = strEmail + strTmp;
   }

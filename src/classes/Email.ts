@@ -25,12 +25,12 @@ export default class Email {
   }
 
   private stringToHTML(str: string): HTMLElement {
-    const context = this;
+    const self = this;
     var parser = new DOMParser();
     var doc = parser.parseFromString(str, 'text/html');
     let element: HTMLElement = doc.getElementsByClassName('js-delete-tag')[0] as HTMLElement;
     element.addEventListener('click', function (e) {
-      context.deleteTag(this);
+      self.deleteTag(this);
     });
     return doc.body;
   };

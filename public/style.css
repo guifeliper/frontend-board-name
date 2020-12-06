@@ -19,8 +19,8 @@ body{
   align-items: center;
   justify-content: center;
   -ms-flex-pack: center;
-   min-height: 350px; 
-   height:100px;
+  min-height: 350px; 
+  height: 100vh;
 }
 
 .card{
@@ -75,15 +75,23 @@ body{
   resize: none;
   padding: 8px;
   line-height: 32px;
+  overflow-y: scroll;
 }
 
+.emailChips {
+  display: inline-block;
+}
 .emailInput{
   border: unset;
+  display: inline-block;
+  margin-right: 8px;
 }
 
 .emailInvalid{
   font-size: 14px;
   border-bottom: 1px dashed #D92929;
+  display: inline-block;
+  margin-right: 8px;
 }
 
 input:focus{
@@ -95,6 +103,8 @@ span.email {
   border-radius: 100px;
   padding: 0 8px;
   margin-right: 8px;
+  margin-bottom: 4px;
+  display: inline-block;
 }
 span.email > .js-delete-tag,
 span.emailInvalid > .js-delete-tag{

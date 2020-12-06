@@ -11,11 +11,12 @@ export default class EmailsEditor {
     return regexp.test(this.email);
   }
 
-  render(container: HTMLElement): void {
+  render(container: HTMLElement): HTMLElement {
     const htmlTemplate = new Email(this.email, this.checkEmail())
     const inputItem = container.lastElementChild;
     const body = htmlTemplate.getEmailHTML();
-    if(body.childNodes.length == 0) return;
+    if(body.childNodes.length == 0) return container;
     container.insertBefore(body.childNodes[0], inputItem);
+    return container; 
   }
 }

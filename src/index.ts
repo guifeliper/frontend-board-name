@@ -9,6 +9,7 @@ import { getValidEmails, generateFakeEmail, insertEmails } from './utils';
       insertEmails(this.value, container);
       this.value = '';
     }
+    input.focus();
   });
 
   input.addEventListener('focusout', function (e) {
@@ -24,14 +25,19 @@ import { getValidEmails, generateFakeEmail, insertEmails } from './utils';
     } else {
       alert(`You have ${validEmailsCount} valid email`);
     }
+    input.focus();
   });
-
+  
   buttonAdd.addEventListener('click', function (e) {
     const newEmail = generateFakeEmail();
     insertEmails(newEmail, container);
+    input.focus();
   });
-
-
+  
+  container.addEventListener('click', function (e) {
+    input.focus();
+  });
+  
 
 })(document.getElementById("emailsContainer") as HTMLElement,
   document.getElementById("emailsInput") as HTMLInputElement,

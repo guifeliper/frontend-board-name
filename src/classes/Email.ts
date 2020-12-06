@@ -30,6 +30,7 @@ export default class Email {
     var doc = parser.parseFromString(str, 'text/html');
     let element: HTMLElement = doc.getElementsByClassName('js-delete-tag')[0] as HTMLElement;
     element.addEventListener('click', function (e) {
+      e.preventDefault();
       self.deleteTag(this);
     });
     return doc.body;

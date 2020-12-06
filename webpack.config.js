@@ -17,8 +17,8 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   output: {
-    publicPath: 'docs',
+    publicPath: '.',
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, '.'),
   },
 };

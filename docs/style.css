@@ -21,6 +21,7 @@ body{
   -ms-flex-pack: center;
   min-height: 350px; 
   height: 100vh;
+  overflow: scroll;
 }
 
 .card{

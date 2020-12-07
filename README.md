@@ -15,22 +15,6 @@ The component need the info of four elements, the emailsContainer, the input fie
   ```
   
  ## Classes
- ### Email Editor
-  ```new EmailsEditor(email.trim());```
-  The constructor of EmailsEditor receives a string.
-   #### Atributes
- | name        | type           | 
-| ------------- |:-------------:| 
-| email      | string | 
-
-
- #### Functions
-| Function        | Return           | Objective    |
-| ------------- |:-------------:| -----:|
-| checkEmail      | Boolean | Verify if the string provided match with email regex. Returns true or false. |
-| render     | HTMLElement      |  Render the email provided in the DOM with all functionalities. Returns the container |
- 
-  
  ### Email 
  ``` new Email(this.email, this.checkEmail())  ```
  The constructor of Email expects to receive an email as string and if the email is valid as boolean. 
@@ -48,7 +32,8 @@ The component need the info of four elements, the emailsContainer, the input fie
  | Function        | Return           | Objective    |
 | ------------- |:-------------:| -----:|
 | getEmailHTML      | HTMLElement | Create the correct DOM HTML for the email provided. Returns the email valid or invalid DOM. |
-
+| checkEmail      | Boolean | Verify if the string provided match with email regex. Returns true or false. |
+| render     | HTMLElement      |  Render the email provided in the DOM with all functionalities. Returns the container |
  
  ### Utils
  | Function        | Return           | Objective    |
@@ -56,7 +41,7 @@ The component need the info of four elements, the emailsContainer, the input fie
 | generateFakeEmail      | string | Returns a valid email format |
 | getValidEmails      | string | Returns a valid email format |
 | insertEmails      | string | Returns a valid email format |
-| renderEmail      | string | Returns a valid email format |
+
 
 
 

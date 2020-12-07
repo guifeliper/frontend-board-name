@@ -3,16 +3,19 @@ export default class Email {
   isValid: Boolean;
   validEmail: string;
   invalidEmail: string;
-
-  constructor(email: string, isValid: Boolean) {
+  private regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  
+  constructor(email: string) {
     this.email = email;
-    this.isValid = isValid;
-    this.validEmail = `<span class="email">${this.email}
+    this.isValid = this.checkEmail();
+    this.validEmail = `<span class="email">
+                          <span>${this.email}</span>
                           <a class="js-delete-tag" title="Remove tag">
                             x
                           </a>
                         </span>`;
-    this.invalidEmail = `<span class="emailInvalid">${this.email}
+    this.invalidEmail = `<span class="emailInvalid">
+                            <span>${this.email}</span>
                             <a class="js-delete-tag" title="Remove tag">
                               x
                             </a>
@@ -36,6 +39,10 @@ export default class Email {
     return doc.body;
   };
 
+  checkEmail(): Boolean {
+    return this.regexp.test(this.email);
+  }
+  
   getEmailHTML(): HTMLElement {
     if (this.isValid) {
       return this.stringToHTML(this.validEmail);
@@ -44,5 +51,10 @@ export default class Email {
     }
   }
 
-
+  render(container: HTMLElement): HTMLElement {
+    const inputItem = container.lastElementChild;
+    const body = this.getEmailHTML();
+    container.insertBefore(body.childNodes[0], inputItem);
+    return container; 
+  }
 }

@@ -5,9 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "server": "webpack-dev-server"
+    "server": "webpack-dev-server",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.16",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "typescript": "^4.1.2",
     "webpack": "^5.9.0",

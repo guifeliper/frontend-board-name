@@ -39,8 +39,8 @@ The component need the info of four elements, the emailsContainer, the input fie
  | Function        | Return           | Objective    |
 | ------------- |:-------------:| -----:|
 | generateFakeEmail      | string | Returns a valid email format |
-| getValidEmails      | string | Returns a valid email format |
-| insertEmails      | string | Returns a valid email format |
+| getValidEmails      | number | Return the number of emails valid|
+| insertEmails      | string | Render all emails passed by the string |
 
 
 

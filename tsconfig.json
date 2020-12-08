@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./docs",
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "commonJs",
     "target": "es5",
     "allowJs": true,
     "sourceMap": true,
